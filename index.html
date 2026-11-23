@@ -89,7 +89,7 @@ let classFactor=({'Эконом':1,'Компакт':1.18,'Универсал':1.
 let gearFactor=d.gear==='Автомат'?1.2:d.gear==='Механика'?1:1.1;
 let seasonFactor=d.season==='Лето'?1.35:d.season==='Весна'||d.season==='Осень'?1.1:d.season==='Зима'?1.05:1.15;
 let durationFactor=d.carDays>=14?.85:d.carDays>=8?.9:1;
-let dailyEUR=rateEUR*classFactor*gearFactor*seasonFactor*durationFactor;
+let dailyEUR=rateEUR*seasonFactor*durationFactor;
 let carEUR=d.car==='Нет'?0:d.carDays*dailyEUR;
 let carCost=Math.round(carEUR*d.eurRate);
 let visaCost=VISA[c[0]]?.type==='schengen'&&d.docs!=='schengen'?Math.round((d.adults+d.kids)*90*d.eurRate):0;
