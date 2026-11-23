@@ -81,7 +81,8 @@ let m=d.likes.length?d.likes.filter(x=>c[3].includes(x)).length/d.likes.length:.
 let season=d.season==='Неважно'||c[7].includes(d.season)?1:.72;
 let baseCost=Math.round(c[4]*rf*(d.adults+d.kids*.65)*(d.days/7));
 let flightSeason=d.season==='Лето'?1.35:d.season==='Зима'?1.12:d.season==='Весна'||d.season==='Осень'?1.08:1.18;
-let routeFlightEUR=d.from==='Белград'&&c[0]==='Сербия'?0:(flightEUR[c[0]]??250);\nlet flightPerPerson=routeFlightEUR*rf*flightSeason;
+let routeFlightEUR=d.from==='Белград'&&c[0]==='Сербия'?0:(flightEUR[c[0]]??250);
+let flightPerPerson=routeFlightEUR*rf*flightSeason;
 let flightCost=Math.round(flightPerPerson*people*d.eurRate);
 let originTransferCost=d.from==='Рязань'?Math.min(10000,Math.round(400/100*10*80+250*d.days)):0;
 let foodPerPerson=((restaurantBill4[c[0]]||55)/4)*(1+2/3)*(d.season==='Лето'?1.05:1);
