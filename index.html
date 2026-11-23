@@ -77,7 +77,7 @@ let m=d.likes.length?d.likes.filter(x=>c[3].includes(x)).length/d.likes.length:.
 let season=d.season==='Неважно'||c[7].includes(d.season)?1:.72;
 let baseCost=Math.round(c[4]*rf*(d.adults+d.kids*.65)*(d.days/7));
 let routeFlightRT=flightMatrixRT[d.from]?.[c[0]]??null;
-let flightPerPersonRub=routeFlightRT===null?null:Math.round(routeFlightRT*(d.from==='Москва'?1:d.eurRate));
+let flightPerPersonRub=routeFlightRT===null?null:Math.round(routeFlightRT*1.35*(d.from==='Москва'?1:d.eurRate));
 let flightCost=flightPerPersonRub===null?null:Math.round(flightPerPersonRub*flightPassengers);
 let originTransferCost=0;
 let foodPerPerson=((restaurantBill4[c[0]]||55)/4)*(1+2/3)*(d.season==='Лето'?1.05:1);
