@@ -80,7 +80,7 @@ let season=d.season==='Неважно'||c[7].includes(d.season)?1:.72;
 let baseCost=Math.round(c[4]*rf*(d.adults+d.kids*.65)*(d.days/7));
 let flightSeason=d.season==='Лето'?1.35:d.season==='Зима'?1.12:d.season==='Весна'||d.season==='Осень'?1.08:1.18;
 let flightPerPerson=(flightEUR[c[0]]||250)*rf*flightSeason;
-let flightCost=Math.round(flightPerPerson*people);
+let flightCost=Math.round(flightPerPerson*people*d.eurRate);
 let foodPerPerson=(foodEUR[c[0]]||28)*(d.season==='Лето'?1.05:1);
 let foodCost=Math.round(foodPerPerson*d.days*people*d.eurRate);
 let stayCost=Math.round(baseCost*.65);
