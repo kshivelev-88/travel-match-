@@ -69,7 +69,7 @@ const flightMatrixRT={
 };
 function results(){
 let people=d.adults+d.kids*.7,flightPassengers=d.adults+d.kids,rf=1; d.carDays=d.days;
-let eligible=C.filter(x=>!d.visaFilters.length||(VISA[x[0]]&&d.visaFilters.includes(VISA[x[0]].type)));
+let eligible=C.filter(x=>(!d.visaFilters.length||(VISA[x[0]]&&d.visaFilters.includes(VISA[x[0]].type)))&&(!d.likes.includes('sea')||x[3].includes('sea')));
 const airport=({'Босния и Герцеговина':'Sarajevo','Сербия':'Belgrade','Черногория':'Podgorica','Албания':'Tirana','Грузия':'Tbilisi','Турция':'Istanbul','Греция':'Athens','Италия':'Rome','Румыния':'Bucharest','Армения':'Yerevan','Оман':'Muscat','Кыргызстан':'Bishkek','Исландия':'Reykjavik','Фарерские острова':'Vagar Faroe Islands','Узбекистан':'Tashkent','Казахстан':'Almaty','Марокко':'Marrakesh','Япония':'Tokyo','Мадейра':'Funchal Madeira','Сокотра':'Socotra'}) ;
 const restaurantBill4=({'Босния и Герцеговина':55,'Сербия':65,'Черногория':70,'Албания':65,'Грузия':55,'Турция':60,'Греция':90,'Италия':120,'Румыния':65,'Армения':65,'Оман':70,'Кыргызстан':40,'Исландия':100,'Фарерские острова':100,'Узбекистан':40,'Казахстан':50,'Марокко':35,'Япония':65,'Мадейра':80,'Сокотра':60});
 let r=eligible.map(c=>{
